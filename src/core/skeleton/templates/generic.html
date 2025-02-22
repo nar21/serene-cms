@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Veobyte Tech Blog - {{ title }}</title>
+
+</head>
+<body>
+	<script type='text/javascript'>
+	  window.smartlook||(function(d) {
+		var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+		var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+		c.charset='utf-8';c.src='https://web-sdk.smartlook.com/recorder.js';h.appendChild(c);
+		})(document);
+		smartlook('init', '6cf168e7367446408247ac1082336d0675be1047', { region: 'eu' });
+	</script>
+
+	<script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            var scrollpos = localStorage.getItem('scrollpos');
+            if (scrollpos) window.scrollTo(0, scrollpos);
+        });
+
+        window.onbeforeunload = function(e) {
+            localStorage.setItem('scrollpos', window.scrollY);
+        };
+    </script>
+	<script src="/script.js"></script>
+
+	<link rel="stylesheet" href="/styles.css">
+    <header>
+		<!--div class="main-header-logo"><img height="40" width="100" src="/assets/images/meta/logo.png"/></div-->
+		<div class="main-header-link"><a  href="https://blog.veobyte.com">Veobyte Tech Blog</a></div>
+    </header>
+     <!-- Navigation Bar height="" width="" -->
+    <nav class="navbar">
+
+        <div class="navbar-toggle" onclick="toggleNav()">&#9776;</div>
+        <ul class="navbar-links" id="navbar-links">
+            <li><a href="https://blog.veobyte.com">Home</a></li>
+            <li><a href="https://www.veobyte.com/#services">Services</a></li>
+            <li><a href="https://forms.office.com/r/yFrYbLpsXg"  target="_blank">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+	{%- if title != None %}
+    	<div class="article-heading"> {{ title }}</div>
+	{% endif  %}
+
+	{%- if publish_date != None and author != None %}
+    <div class="author-name"> Authored on {{ publish_date }} by {{ author }} </div>
+	{% endif %}
+
+		<section class="text-content">
+			{%- for element in body %}
+			{%- if element.type == "text" %}
+				{%- for value in element.content %}
+				<div class="para">
+					{{ value }}
+				</div>
+				{% endfor %}
+			{% endif %}
+
+			{%- if element.type == "section-heading" %}
+				{%- for value in element.content %}
+					<div class="page-section">
+					{{ value }}
+					</div>
+				{% endfor %}
+			{% endif %}
+
+			{%- if element.type == "subsection-heading" %}
+				{%- for value in element.content %}
+				<div class="page-subsection">
+					{{ value }}
+				</div>
+				{% endfor %}
+			{% endif %}
+
+			{%- if element.type == "list-ordered" %}
+				<ol>
+				{%- for value in element.content %}
+					<li>{{ value }}</li>
+				{% endfor %}
+				</ol>
+			{% endif %}
+
+			{%- if element.type == "list-unordered" %}
+			    {%- if css_class != None %}
+				<ul class="{{ element.css_class }}">
+				{% else %}
+				<ul>
+				{% endif %}
+				{%- for value in element.content %}
+					<li>{{ value }}</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+
+
+			{%- if element.type != None and element.type == "postscript-contact-us" %}
+				<div class="postscript">
+					Require related assistance? <a href="https://forms.office.com/r/yFrYbLpsXg" target="_blank">Contact us</a> today!
+				</div>
+			{% endif %}
+
+			{%- if element.type != None and element.type == "image" %}
+				 <figure>
+					<img src="{{ element.url }}" width="{{ element.width }}" height="{{ element.height }}">
+					<figcaption>{{ element.caption }}</figcaption>
+				</figure>
+
+			{% endif %}
+
+			{%- if element.type != None and element.type == "table" %}
+				<table>
+				{%- for row in element.content %}
+					<tr>
+					{%- for col in row %}
+						<td>{{ col }}</td>
+					{% endfor %}
+					</tr>
+				{% endfor %}
+				</table>
+			{% endif %}
+
+
+			{%- if element.type != None and element.type == "comments" %}
+				<hr>
+				<div id="disqus_thread" style="padding-top: 30px"></div>
+				<script>
+					/**
+					*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+					*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+					/*
+					var disqus_config = function () {
+					this.page.url = {{ page_url }};  // Replace PAGE_URL with your page's canonical URL variable
+					this.page.identifier = {{ page_slug }}; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+					};
+					*/
+					(function() { // DON'T EDIT BELOW THIS LINE
+					var d = document, s = d.createElement('script');
+					s.src = 'https://veobyte.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+					})();
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+				<script id="dsq-count-scr" src="//veobyte.disqus.com/count.js" async></script>
+			{% endif %}
+			{% endfor %}
+		</section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Veobyte Technologies 🇮🇳</p>
+    </footer>
+
+</body>
+</html>
