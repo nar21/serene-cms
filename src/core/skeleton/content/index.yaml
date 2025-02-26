@@ -1,0 +1,31 @@
+title: Welcome
+author: Nar
+publish_date: 2025-01-01
+template:
+body:
+  - type: section-heading
+    content:
+      - Section 1
+  - type: text
+    content:
+      - This is a sample text
+      - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis ullamcorper ante, id posuere erat. Phasellus eget enim euismod, lacinia nunc venenatis, suscipit erat. Maecenas sed vestibulum lacus. Quisque luctus sapien id nunc interdum, ut semper nisl bibendum. Nulla sit amet volutpat sem, ut vehicula mauris. In hac habitasse platea dictumst. Morbi id feugiat sem.
+  - type: list-unordered
+    content:
+      - This is item 1 in an unordered list
+      - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis ullamcorper ante, id posuere erat. Phasellus eget enim euismod, lacinia nunc venenatis, suscipit erat. Maecenas sed vestibulum lacus. Quisque luctus sapien id nunc interdum, ut semper nisl bibendum. Nulla sit amet volutpat sem, ut vehicula mauris. In hac habitasse platea dictumst. Morbi id feugiat sem.
+  - type: list-ordered
+    content:
+      - <a href="/subpage/">Link to subpage</a>
+      - This is item 2 in an ordered list
+  - type: section-heading
+    content:
+      - Section 2
+  - type: subsection-heading
+    content:
+      - Subsection A
+  - type: image
+    url: /assets/images/crab.jpg
+    width: 420
+    height: 570
+    caption: "[From Wikipedia] Crabs are decapod crustaceans of the infraorder Brachyura (meaning\"short tail\" in Greek), which typically have a very short projecting tail-like abdomen, usually hidden entirely under the thorax.[a] They live in all the world's oceans, in freshwater, and on land. They are generally covered with a thick exoskeleton."

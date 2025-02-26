@@ -25,12 +25,15 @@ def generate_static_files(project_path:str):
 
         print("Parsing " + current_file)
         data = yaml.safe_load(open(current_file).read())
-        # print(data)
+        if data.get("settings"):
+            raise Exception("Exception: \"settings\" cannot be set at the root of input yaml.")
+
         data["page_slug"] = slugify(data["title"])# if data["title"] else None
 
         target_dir_str = str(Path(os.path.join(static_target_path, os.path.relpath(source_dir_str, content_path))).resolve())
 
         data["page_url"] = settings["SITE_URL"] + "/" + "/".join(source_path[1:])
+        data["settings"] = settings
 
         if not os.path.exists(target_dir_str):
             target_dir_obj = Path(target_dir_str)

@@ -1,0 +1,294 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    width: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    color: #333;
+    font-size: 1.2rem;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+
+header {
+    background: #0066CC;
+    color: #fff;
+    text-align: left;
+}
+
+.main-header-logo img {
+    display: flex;
+}
+
+.main-header-link a {
+    display: flex;
+    color: #fff;
+    font-size: 2rem;
+    padding: 0.5%;
+    padding-left: 3%;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #FFF;
+    color: #fff;
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 0 5px 5px #CCC;
+}
+
+.navbar-brand h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding-left: 1.5%;
+
+}
+
+.navbar-links li {
+    margin-left: 20px;
+}
+
+.navbar-links a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+
+}
+
+.navbar-links a:hover {
+
+}
+
+.navbar-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+}
+
+h1 {
+    margin: 0;
+    padding: 2%;
+}
+h4 {
+    margin: 0;
+    padding-left: 3%;
+}
+
+main {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 10%;
+}
+.blog-list {
+    padding-left: 5%;
+}
+.text-content, .image-content {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #560070;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding: 0.25em;
+   text-indent: 30px;
+}
+a {
+  text-decoration: none;
+  color: #560070;
+  font-size: 1.3rem;
+}
+
+#disqus_thread {
+    padding-top: 50px;
+}
+/* Hover state (underline appears) */
+a:hover {
+  text-decoration: underline;
+}
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 40%;
+  align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+  padding-bottom: 2%;
+  padding-top: 2%;
+}
+
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  width: 50px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+figure {
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  padding-bottom: 1%;
+  padding-top: 2%;
+  display: table;
+}
+figure img {
+    max-width: 100%;
+    max-height: 100vh;
+    margin: auto;
+}
+figure figcaption {
+    display: table-caption;
+    caption-side: bottom ;
+    text-align: center;
+    font-size: 1rem;
+    padding-bottom: 1%;
+    color: #555;
+}
+
+.page-section {
+  font-size: 1.5rem;
+  padding-top: 3%;
+  color: #000;
+}
+
+.page-subsection {
+  font-size: 1.3rem;
+  padding-top: 1.2%;
+  color: #666;
+}
+.article-heading { 
+  color: #560070;
+  font-size: 1.75rem;
+  text-align: center;
+}
+.responsive-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.author-name {
+  color: #000;
+  font-size: 1rem;
+  text-align: center;
+  padding-bottom: 2%;
+}
+.para {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding: 0.4em;
+    padding-bottom: 1%;
+    text-indent: 30px;
+}
+
+.para a {
+  text-decoration: none;
+  color: #560070;
+  font-size: 1.2 rem;
+}
+
+.postscript {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    padding-top: 3%;
+    padding-bottom: 2%;
+}
+
+.home-blog-list {
+  font-size: 1.5rem;
+  padding-left: 1.5%;
+  color: #560070;
+}
+li {
+padding: 0.3%;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #FFF;
+    color: #000;
+   bottom: 0;
+   position: fixed;
+   width: 100%;
+   box-shadow: 0 0 5px 5px #CCC;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablets and smaller (up to 768px) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile (up to 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+    ol {
+        padding-left: 5%;
+    }
+    body {
+        padding-bottom: 10%;
+    }
+}
