@@ -6,6 +6,16 @@ body:
   - type: section-heading
     content:
       - Section 1
+  - type: table
+    content:
+      - - Column heading 1
+        - Column heading 2
+        - Column heading 3
+
+      - - Row 1 Col 1
+        - Row 1 Col 2
+        - Row 1 Col 3
+
   - type: text
     content:
       - This is a sample text
