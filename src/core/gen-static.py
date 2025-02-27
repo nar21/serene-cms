@@ -5,7 +5,8 @@ from pathlib import Path
 from slugify import slugify
 import argparse
 
-def generate_static_files(project_path:str):
+
+def generate_static_files(project_path: str):
     print(str(Path(project_path).resolve()))
 
     content_path = str(Path(project_path + "/content").resolve())
@@ -26,11 +27,19 @@ def generate_static_files(project_path:str):
         print("Parsing " + current_file)
         data = yaml.safe_load(open(current_file).read())
         if data.get("settings"):
-            raise Exception("Exception: \"settings\" cannot be set at the root of input yaml.")
+            raise Exception(
+                'Exception: "settings" cannot be set at the root of input yaml.'
+            )
 
-        data["page_slug"] = slugify(data["title"])# if data["title"] else None
+        data["page_slug"] = slugify(data["title"])  # if data["title"] else None
 
-        target_dir_str = str(Path(os.path.join(static_target_path, os.path.relpath(source_dir_str, content_path))).resolve())
+        target_dir_str = str(
+            Path(
+                os.path.join(
+                    static_target_path, os.path.relpath(source_dir_str, content_path)
+                )
+            ).resolve()
+        )
 
         data["page_url"] = settings["SITE_URL"] + "/" + "/".join(source_path[1:])
         data["settings"] = settings
@@ -49,7 +58,9 @@ def generate_static_files(project_path:str):
 
 def main():
     parser = argparse.ArgumentParser("simple_example")
-    parser.add_argument("--path", help="Directory path where project will be initialized", type=str)
+    parser.add_argument(
+        "--path", help="Directory path where project will be initialized", type=str
+    )
     args = parser.parse_args()
 
     generate_static_files(args.path)
