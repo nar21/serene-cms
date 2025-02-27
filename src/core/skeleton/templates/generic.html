@@ -41,6 +41,14 @@
 				{% endfor %}
 			{% endif %}
 
+			{%- if element.type == "text-stanza" %}
+				<div class="stanza">
+				{%- for value in element.content %}
+					{{ value }}<br>
+				{% endfor %}
+					</div>
+			{% endif %}
+
 			{%- if element.type == "section-heading" %}
 				{%- for value in element.content %}
 					<div class="page-section">

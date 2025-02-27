@@ -80,6 +80,15 @@ http://127.0.0.1:8080
       - This is paragraph 2
 ```
 
+### Stanza
+This differs from `text` type by considering all the lines under content as a single stanza. It is suitable for a poetry like layout.
+```yaml
+  - type: text-stanza
+    content:
+      - This is line 1
+      - This is line 2
+```
+
 ### Section heading
 ```yaml
   - type: section-heading

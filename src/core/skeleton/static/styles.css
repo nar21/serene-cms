@@ -221,6 +221,18 @@ figure figcaption {
   font-size: 1.2 rem;
 }
 
+.stanza {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding-bottom: 2%;
+}
+
+.stanza a {
+  text-decoration: none;
+  color: #560070;
+  font-size: 1.2 rem;
+}
+
 .postscript {
     font-size: 1.3rem;
     line-height: 1.6;

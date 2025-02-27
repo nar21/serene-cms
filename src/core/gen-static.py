@@ -62,7 +62,6 @@ def main():
         "--path", help="Directory path where project will be initialized", type=str
     )
     args = parser.parse_args()
-
     generate_static_files(args.path)
 
 
