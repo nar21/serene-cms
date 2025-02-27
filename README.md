@@ -76,7 +76,8 @@ http://127.0.0.1:8080
 ```yaml
   - type: text
     content:
-      - This is a sample text
+      - This is paragraph 1
+      - This is paragraph 2
 ```
 
 ### Section heading
@@ -111,6 +112,7 @@ http://127.0.0.1:8080
   - type: list-unordered
     content:
       - This is item 1 in an unordered list
+      - This is item 2 in an unordered list
 ```
 
 ### Ordered List
@@ -118,6 +120,7 @@ http://127.0.0.1:8080
   - type: list-ordered
     content:
       - This is item 1 in an ordered list
+      - This is item 2 in an ordered list
 ```
 
 ### Image
